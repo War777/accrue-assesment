@@ -3,6 +3,9 @@
 /back/node_modules
 /back/db/db.sqlite
 
+/front/dist
+/front/node_modules
+
 # Logs
 /back/logs
 /back/*.log
