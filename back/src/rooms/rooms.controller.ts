@@ -28,6 +28,12 @@ export class RoomsController {
         );
     }
 
+    @Get(':id')
+    getRoom(@Param('id') id: string) {
+        console.log('get room', id);
+        return this.roomsService.getRoom(parseInt(id));
+    }
+
     @Delete(':id')
     deleteRoom(@Param('id') id: string) {
         console.log('delete room', id);
