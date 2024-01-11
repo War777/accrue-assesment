@@ -1,35 +1,34 @@
 import {
     AutoIncrement,
+    BelongsTo,
     Column,
     CreatedAt,
-    Default,
     DeletedAt,
-    HasMany,
+    ForeignKey,
     Model,
     PrimaryKey,
     Table,
     UpdatedAt,
 } from 'sequelize-typescript';
-import Schedule from '../schedules/schedule.entity';
+import Room from 'src/rooms/room.entity';
 
 @Table({
-    tableName: 'rooms',
+    tableName: 'schedules',
 })
-class Room extends Model {
+class Schedule extends Model {
     @PrimaryKey
     @AutoIncrement
     @Column
     id: number;
 
     @Column
-    name: string;
+    userName: string;
 
     @Column
-    capacity: number;
+    startDate: Date;
 
-    @Default(true)
     @Column
-    enabled: boolean;
+    endDate: Date;
 
     @CreatedAt
     @Column
@@ -43,8 +42,12 @@ class Room extends Model {
     @Column
     deletedAt: Date;
 
-    @HasMany(() => Schedule, 'roomId')
-    schedule: Schedule[];
+    @ForeignKey(() => Room)
+    @Column
+    roomId: number;
+
+    @BelongsTo(() => Room, 'roomId')
+    room: Room;
 }
 
-export default Room;
+export default Schedule;
