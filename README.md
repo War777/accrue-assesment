@@ -25,7 +25,7 @@ $ npm run start:dev
 
 #### To Startup the UI navigate to the front end folder in a different terminal
 ```bash
-$ cd ../accrue-assesment/front
+$ cd ../front
 ```
 
 #### Install modules
