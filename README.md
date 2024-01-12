@@ -37,3 +37,11 @@ $ npm install
 ```bash
 $ npm run start:dev
 ```
+
+#### UI Credentials:
+User: john
+Password: changeme
+
+User: maria
+Password: guess
+
